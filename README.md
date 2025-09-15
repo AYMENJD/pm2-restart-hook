@@ -14,7 +14,7 @@ A simple and lightweight PM2 module that creates a parent-child dependency betwe
 
 ### Requirements
 
-- PM2 5+
+- PM2 v5.0.0+
 
 ### Installation
 
@@ -87,7 +87,7 @@ You can configure the hook's behavior by setting variables on the module itself 
 | Environment Variable         | Description                                                                                             | Default            |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------ |
 | `PARENT_ENV_KEY`             | The environment variable key used to identify the parent app                                            | `PM2_PARENT_APP`   |
-| `IGNORE_MANUAL_RESTARTS`     | If set to any value (e.g., `true`), manual restarts (`pm2 restart <app>`) will be ignored               | (not set)          |
+| `IGNORE_MANUAL_RESTARTS`     | If set to any value (e.g., `true`), manual restarts (`pm2 restart <app>`) will be ignored               | `true`          |
 | `CHILD_RESTART_DELAY_MS`     | The delay in milliseconds between restarting each child process to prevent system overload              | `200`              |
 
 **Example of setting a configuration variable:**
