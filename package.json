@@ -1,0 +1,33 @@
+{
+    "name": "pm2-restart-hook",
+    "version": "0.1.0",
+    "description": "A PM2 module to automatically restart child processes when a parent app is restarted",
+    "main": "index.js",
+    "author": "AYMENJD",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AYMENJD/pm2-restart-hook.git"
+    },
+    "bugs": {
+        "url": "https://github.com/AYMENJD/pm2-restart-hook/issues"
+    },
+    "homepage": "https://github.com/AYMENJD/pm2-restart-hook",
+    "keywords": [
+        "pm2",
+        "pm2-module",
+        "hook",
+        "restart",
+        "dependency",
+        "parent-child",
+        "manager"
+    ],
+    "dependencies": {
+        "pm2": ">=5.0.0"
+    },
+    "config": {
+        "PARENT_ENV_KEY": "PM2_PARENT_APP",
+        "IGNORE_MANUAL_RESTARTS": "true",
+        "CHILD_RESTART_DELAY_MS": "200"
+    }
+}
