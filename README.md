@@ -1,4 +1,3 @@
-
 # pm2-restart-hook [![NPM Version](https://img.shields.io/npm/v/pm2-restart-hook?style=flat&logo=npm)](https://www.npmjs.com/package/pm2-restart-hook) [![License](https://img.shields.io/npm/l/pm2-restart-hook?style=flat)](LICENSE)
 
 A simple and lightweight PM2 module that creates a parent-child dependency between your applications, automatically restarting child processes when their designated parent application is restarted
@@ -89,6 +88,9 @@ You can configure the hook's behavior by setting variables on the module itself 
 | `PARENT_ENV_KEY`             | The environment variable key used to identify the parent app                                            | `PM2_PARENT_APP`   |
 | `IGNORE_MANUAL_RESTARTS`     | If set to any value (e.g., `true`), manual restarts (`pm2 restart <app>`) will be ignored               | `true`          |
 | `CHILD_RESTART_DELAY_MS`     | The delay in milliseconds between restarting each child process to prevent system overload              | `200`              |
+
+> [!IMPORTANT]
+> You must be aware that some of PM2's automated restart features, most notably `cron_restart`, are categorized as 'manual' restarts within PM2's event system. Therefore, if you enable `IGNORE_MANUAL_RESTARTS`, restarts triggered by a cron schedule will **not** trigger the hook for child applications.
 
 **Example of setting a configuration variable:**
 
