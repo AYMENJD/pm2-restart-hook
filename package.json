@@ -1,6 +1,6 @@
 {
     "name": "pm2-restart-hook",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A PM2 module to automatically restart child processes when a parent app is restarted",
     "main": "index.js",
     "author": "AYMENJD",
