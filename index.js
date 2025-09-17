@@ -2,7 +2,7 @@ const pm2 = require("pm2");
 const util = require("util");
 
 const PARENT_ENV_KEY = process.env.PARENT_ENV_KEY || "PM2_PARENT_APP";
-const IGNORE_MANUAL = process.env.IGNORE_MANUAL_RESTARTS;
+const IGNORE_MANUAL = process.env.IGNORE_MANUAL_RESTARTS === "true";
 const RESTART_DELAY_MS =
     parseInt(process.env.CHILD_RESTART_DELAY_MS, 10) || 200;
 

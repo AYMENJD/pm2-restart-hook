@@ -86,7 +86,7 @@ You can configure the hook's behavior by setting variables on the module itself 
 | Environment Variable         | Description                                                                                             | Default            |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------ |
 | `PARENT_ENV_KEY`             | The environment variable key used to identify the parent app                                            | `PM2_PARENT_APP`   |
-| `IGNORE_MANUAL_RESTARTS`     | If set to any value (e.g., `true`), manual restarts (`pm2 restart <app>`) will be ignored               | `true`          |
+| `IGNORE_MANUAL_RESTARTS`     | If set to `true`, manual restarts (`pm2 restart <app>`) will be ignored                                 | `false`            |
 | `CHILD_RESTART_DELAY_MS`     | The delay in milliseconds between restarting each child process to prevent system overload              | `200`              |
 
 > [!IMPORTANT]
