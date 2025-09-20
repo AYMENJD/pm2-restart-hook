@@ -17,12 +17,13 @@ console.log(
 async function handleProcessEvent(packet) {
     const event = packet.event;
     const processFromEvent = packet.process;
+    const status = processFromEvent.status;
     const parentAppName = processFromEvent.name;
     const isManually = packet.manually;
 
     if (processFromEvent[PARENT_ENV_KEY]) return; // This is a child process, ignore its events
 
-    if (event !== "restart") return;
+    if (event !== "online" || status !== "launching") return;
 
     if (isManually && IGNORE_MANUAL) {
         console.log(`Ignoring manual restart of '${parentAppName}'`);
