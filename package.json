@@ -27,7 +27,7 @@
     },
     "config": {
         "PARENT_ENV_KEY": "PM2_PARENT_APP",
-        "IGNORE_MANUAL_RESTARTS": "false",
+        "IGNORE_MANUAL_RESTARTS": "true",
         "CHILD_RESTART_DELAY_MS": "200"
     }
 }

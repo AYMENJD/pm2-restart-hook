@@ -86,17 +86,14 @@ You can configure the hook's behavior by setting variables on the module itself 
 | Environment Variable         | Description                                                                                             | Default            |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------ |
 | `PARENT_ENV_KEY`             | The environment variable key used to identify the parent app                                            | `PM2_PARENT_APP`   |
-| `IGNORE_MANUAL_RESTARTS`     | If set to `true`, manual restarts (`pm2 restart <app>`) will be ignored                                 | `false`            |
+| `IGNORE_MANUAL_RESTARTS`     | If set to `true`, manual restarts (`pm2 restart <app>`) will be ignored                                 | `true`             |
 | `CHILD_RESTART_DELAY_MS`     | The delay in milliseconds between restarting each child process to prevent system overload              | `200`              |
-
-> [!IMPORTANT]
-> You must be aware that some of PM2's automated restart features, most notably `cron_restart`, are categorized as 'manual' restarts within PM2's event system. Therefore, if you enable `IGNORE_MANUAL_RESTARTS`, restarts triggered by a cron schedule will **not** trigger the hook for child applications.
 
 **Example of setting a configuration variable:**
 
 ```bash
-# Make the hook ignore manual restarts
-pm2 set pm2-restart-hook:IGNORE_MANUAL_RESTARTS true
+# Make the hook to not ignore manual restarts
+pm2 set pm2-restart-hook:IGNORE_MANUAL_RESTARTS false
 
 # Change the restart delay to 1 second
 pm2 set pm2-restart-hook:CHILD_RESTART_DELAY_MS 1000
